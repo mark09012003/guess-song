@@ -10,26 +10,6 @@
 - 手動新增具名歌單，支援三欄 CSV／TSV：歌名、歌手、YouTube 連結。
 - 333 筆內建曲目，同一影片合併後可抽 332 首；部分為原唱現場版本。
 
-## 本機執行
-
-在專案資料夾執行：
-
-```bash
-python -m http.server 8000
-```
-
-瀏覽器開啟 http://localhost:8000/ 。YouTube 播放需要網路，直接雙擊 HTML 可能因來源資訊而無法播放。
-
-Windows 可雙擊 `windows/GuessSong.exe`，自動啟動 localhost:8000 並開啟瀏覽器，不需 Python。保留服務視窗，關閉即停止。若 8000 已使用，先停止其他服務。執行檔使用 Windows 內建 PowerShell；尚未在 Windows 實機驗證。
-
-## Windows 啟動器重建
-
-```bash
-python windows/build.py
-```
-
-會把目前 `index.html` 與 `songs.json` 合併並內建到 `windows/GuessSong.exe`，同時輸出可檢視的 `windows/launcher.ps1`。
-
 ## 歌單保存
 
 自訂歌單存在瀏覽器 localStorage（key：`guessSong.manualPlaylists.v1`），不寫回專案檔案，也不跨裝置同步。網址的協定、主機或連接埠改變會使用不同儲存區。請保留匯入用 CSV。
